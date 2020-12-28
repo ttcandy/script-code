@@ -1,19 +1,19 @@
 #!/usr/local/python3/bin/python3.8
 # -*- encoding: utf-8 -*-
 '''
-@File    :   手机号码随机生成重构.py    
+@File    :   手机号码随机生成2.0.py
 @Contact :   tt_candy@outlook.com
 @License :   仅供非生产环境使用
 @Desciption: 随机生成手机号码，号码仅用于数据分析测试
 @Creation time：20/12/28 9:07
 
-@Modify Time      @Author    @Version    @Modify action
-------------      -------    --------    -----------
-   None           ttcandy      2.0         None
+@Modify Time      @Author    @Version
+------------      -------    --------
+   None           ttcandy      2.0
 '''
-from multiprocessing import Process
+from multiprocessing import Pool
 from random import choice,randint
-import gevent
+
 from datetime import datetime
 '''
 主体：
@@ -72,7 +72,7 @@ class Phone():
         return ph_tail_num
 
     @staticmethod
-    def ph_num():
+    def ph_num(nool):
         '''
         拼接手机号码，返回完整运营商和手机号码列表
         :return:ph_list
@@ -88,11 +88,25 @@ class Phone():
 
 
 if __name__=="__main__":
+    starttime = datetime.now()
 
     filename="上门服务.txt"
-    nums = 10000000
-    with open(filename, "a", encoding="UTF-8") as f:
-        while nums > 0:
-            ph=Phone.ph_num()
-            f.write(ph[0]+","+ph[1]+"\n")
-            nums -=1
+
+    def wirte_file(phone):
+        with open(filename, "a", encoding="UTF-8") as f:
+            f.write(phone[0]+","+phone[1]+"\n")
+
+    nums = 100000
+    po = Pool(5)
+    while nums > 0:
+        ph=Phone
+        po.apply_async(func=Phone.ph_num,args=(nums,),callback=wirte_file)
+        nums -=1
+    po.close()
+    po.join()
+
+
+    endtime = datetime.now()
+    print("RunTime: {}h-{}m-{}s".format(
+        endtime.hour - starttime.hour, endtime.minute - starttime.minute,endtime.second - starttime.second
+    ))
