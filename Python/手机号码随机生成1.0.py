@@ -1,7 +1,7 @@
 #!/usr/bin/
 # -*- encoding: utf-8 -*-
 '''
-@File    :   手机号码随机生成.py    
+@File    :   手机号码随机生成1.0.py
 @Contact :   tt_candy@outlook.com
 @License :   仅供非生产环境使用
 @Desciption: 随机生成手机号码，号码仅用于数据分析测试
