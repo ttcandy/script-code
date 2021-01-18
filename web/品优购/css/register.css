@@ -1,0 +1,131 @@
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+header{
+    height: 84px;
+    border-bottom: 2px solid #c81523;
+}
+.logo{
+    padding-top: 10px;
+}
+.registerarea{
+    height: 522px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.registerarea h3{
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    background-color: #ececec;
+    line-height: 42px;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.login{
+    float: right;
+    font-size: 14px;
+}
+.login a{
+    color: red;
+}
+.reg_form{
+    width: 600px;
+    margin: 50px auto 0;
+}
+.reg_form ul li{
+    margin-bottom: 20px;
+}
+.reg_form ul li label{
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+}
+.reg_form ul li:nth-child(-n+5) input{
+    width: 242px;
+    height: 37px;
+    border: 1px solid #ccc;
+}
+.error{
+    color: red;
+}
+.error_icon,
+.success_icon{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+}
+.error_icon{
+    background: url("../images/error.png") no-repeat;
+}
+.success{
+    color: green;
+}
+.success_icon{
+    background: url("../images/success.png") no-repeat;
+}
+.safe{
+    margin-left: 170px;
+}
+.safe em{
+    padding: 0 12px;
+    color: #fff;
+}
+.safe em:nth-child(1){
+    background-color: #de1111;
+}
+.safe em:nth-child(2){
+    background-color: #40b83f;
+}
+.safe em:nth-child(3){
+    background-color: #f79100;
+}
+.agree{
+        padding-left: 95px;
+}
+.agree input{
+    vertical-align: middle;
+}
+.agree a{
+    color: #1ba1e6;
+}
+.btn{
+    width: 200px;
+    height: 34px;
+    background-color: #c81623;
+    font-size: 14px;
+    color: #fff;
+    margin: 30px 0 0 70px;
+}
+
+
+
+/*底部模块*/
+
+.mod_copyright{
+    text-align: center;
+    padding-top: 20px;
+}
+.links{
+    margin-bottom: 15px;
+    margin-left: 115px;
+}
+.links ul li {
+    float: left;
+    margin: 0 3px;
+}
+.links ul li:nth-of-type(2n){
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+    margin: 4px 8px 0;
+}
+.links ul li a{
+    text-align: center;
+}
+.copyright{
+    line-height: 20px;
+}
